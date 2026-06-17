@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background: #080e1a; color: #f0f4ff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: #080e1a; }
+  ::-webkit-scrollbar-thumb { background: #0099bb; border-radius: 3px; }
+}
+
+@layer components {
+  .section-label { @apply text-xs font-bold tracking-[3px] text-cyan uppercase mb-3; }
+  /* Font sizes like reference — not too big */
+  .section-title { @apply font-head text-2xl md:text-3xl font-bold leading-snug mb-4; }
+  .btn-primary   { @apply inline-flex items-center gap-2 px-7 py-3 rounded-full bg-cyan text-bg font-semibold text-sm border-2 border-cyan transition-all duration-300 hover:bg-transparent hover:text-cyan; }
+  .btn-outline   { @apply inline-flex items-center gap-2 px-7 py-3 rounded-full bg-transparent text-white font-semibold text-sm border-2 border-[#1a2d46] transition-all duration-300 hover:border-cyan hover:text-cyan; }
+  .card          { @apply bg-card border border-border rounded-2xl transition-all duration-300; }
+}
+
+.typed-cursor { border-right: 3px solid #00d4ff; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { border-color: transparent; } }
+
+.fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.skill-bar-fill { width: 0; transition: width 1.4s ease; }
+
+.star { position: absolute; border-radius: 50%; background: white; animation: twinkle var(--d, 3s) infinite alternate; }
+@keyframes twinkle { from { opacity: .1; } to { opacity: .8; } }
+
+/* Marquee scroll */
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-track { animation: marquee 20s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+
+
+.project-image {
+  width: 100%;
+  height: auto;
+  transition: transform 4s linear;
+}
+
+.group:hover .project-image {
+  transform: translateY(-70%);
+}
