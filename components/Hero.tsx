@@ -48,7 +48,7 @@ export default function Hero() {
           Professional<br /><span ref={typedRef} className="text-cyan typed-cursor"></span>
         </h1>
         <p className="text-muted text-base md:text-lg leading-relaxed max-w-xl mx-auto mb-9">
-          I craft digital experiences that captivate audiences and drive results. Specializing in modern full-stack web development and scalable system design.
+          JavaScript, React, Next JS, Node JS, Express, MongoDB, AWS Cloud, Gen AI, Redis, Kafka, Docker, RabbitMQ, Git
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <button onClick={()=>go('portfolio')} className="btn-primary"><i className="fas fa-eye"></i> View Portfolio</button>
